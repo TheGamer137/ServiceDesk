@@ -1,0 +1,21 @@
+﻿@model ServiceDesk.Models.ViewModels.LoginViewModel
+<div id="login-form-wrap">
+    <h2>Войти</h2>
+    <form id="login-form" asp-action="Login" method="post">
+        <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+        <p>
+            <input asp-for="Email" placeholder="Email">
+            <span class="text-danger" asp-validation-for="Email"></span>
+        </p>
+        <p>
+            <input asp-for="Password" placeholder="Пароль">
+            <span class="text-danger" asp-validation-for="Password"></span>
+        </p>
+        <p>
+            <input type="submit" id="login" value="Войти">
+        </p>
+    </form>
+    <div id="create-account-wrap">
+        <p>Не зарегистрированы?<a asp-action="Register">Создать аккаунт</a><p>
+    </div><!--create-account-wrap-->
+</div><!--login-form-wrap-->

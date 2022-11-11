@@ -1,0 +1,103 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = ServiceDesk
+build_property.RootNamespace = ServiceDesk
+build_property.ProjectDir = C:\MyProjects\C#\ServiceDesk\ServiceDesk\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\MyProjects\C#\ServiceDesk\ServiceDesk
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/MyProjects/C\#/ServiceDesk/ServiceDesk/Views/User/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = 
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/MyProjects/C\#/ServiceDesk/ServiceDesk/Views/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/MyProjects/C\#/ServiceDesk/ServiceDesk/Views/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/MyProjects/C\#/ServiceDesk/ServiceDesk/Views/Shared/CssPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENzc1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/MyProjects/C\#/ServiceDesk/ServiceDesk/Views/Shared/FooterPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEZvb3RlclBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/MyProjects/C\#/ServiceDesk/ServiceDesk/Views/Shared/MetatagsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXE1ldGF0YWdzUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/MyProjects/C\#/ServiceDesk/ServiceDesk/Views/Shared/ScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFNjcmlwdHNQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/MyProjects/C\#/ServiceDesk/ServiceDesk/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/MyProjects/C\#/ServiceDesk/ServiceDesk/Views/Task/AddComment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFza1xBZGRDb21tZW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/MyProjects/C\#/ServiceDesk/ServiceDesk/Views/Task/ChangeDeadline.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFza1xDaGFuZ2VEZWFkbGluZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/MyProjects/C\#/ServiceDesk/ServiceDesk/Views/Task/ChangeExecutor.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFza1xDaGFuZ2VFeGVjdXRvci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/MyProjects/C\#/ServiceDesk/ServiceDesk/Views/Task/ChangeStatus.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFza1xDaGFuZ2VTdGF0dXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/MyProjects/C\#/ServiceDesk/ServiceDesk/Views/Task/Completed.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFza1xDb21wbGV0ZWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/MyProjects/C\#/ServiceDesk/ServiceDesk/Views/Task/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFza1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/MyProjects/C\#/ServiceDesk/ServiceDesk/Views/Task/Filter.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFza1xGaWx0ZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/MyProjects/C\#/ServiceDesk/ServiceDesk/Views/Task/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFza1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/MyProjects/C\#/ServiceDesk/ServiceDesk/Views/User/ChangeUserRole.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxDaGFuZ2VVc2VyUm9sZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/MyProjects/C\#/ServiceDesk/ServiceDesk/Views/User/_UsersList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxfVXNlcnNMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/MyProjects/C\#/ServiceDesk/ServiceDesk/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/MyProjects/C\#/ServiceDesk/ServiceDesk/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/MyProjects/C\#/ServiceDesk/ServiceDesk/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-oq0noshtbw

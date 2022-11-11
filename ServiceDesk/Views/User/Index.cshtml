@@ -1,0 +1,20 @@
+﻿@model List<UserViewModel>
+
+<title>@ViewData["Title"] - Пользователи</title>
+
+<div class="container row p-0 m-0">
+    <h1>Пользователи</h1>
+    <br/>
+    <div class="col-12 border p-3">
+        <table class="table table-striped table-bordered" style="width:100%">
+            @if (Model.Count > 1)
+            {
+                @await Html.PartialAsync("_UsersList")
+            }
+            else
+            {
+                <tr>Никто не регистрировался =(</tr>
+            }
+        </table>
+    </div>
+</div>

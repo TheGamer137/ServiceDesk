@@ -1,0 +1,58 @@
+﻿@* @model ServiceDesk.ViewModels.LoginOrRegisterViewModel *@
+@* <div class="signup"> *@
+@*     <a asp-action="Register"></a><label for="chk" aria-hidden="true">Новый пользователь</label> *@
+@*     <form class="register-form" asp-action="Register" method="post"> *@
+@*         <div class="text-danger" asp-validation-summary="ModelOnly"></div> *@
+@*         <div class="form-group"> *@
+@*             <input asp-for="RegisterViewModel.FirstName" placeholder="Имя"> *@
+@*             <span class="text-danger" asp-validation-for="RegisterViewModel.FirstName"></span> *@
+@*         </div> *@
+@*         <div class="form-group"> *@
+@*             <input asp-for="RegisterViewModel.LastName" placeholder="Фамилия"> *@
+@*             <span class="text-danger" asp-validation-for="RegisterViewModel.LastName"></span> *@
+@*         </div> *@
+@*         <div class="form-group"> *@
+@*             <input asp-for="RegisterViewModel.Email" placeholder="Email"> *@
+@*             <span class="text-danger" asp-validation-for="RegisterViewModel.Email"></span> *@
+@*         </div> *@
+@*         <div class="form-group"> *@
+@*             <input asp-for="RegisterViewModel.Password" placeholder="Пароль"> *@
+@*             <span class="text-danger" asp-validation-for="RegisterViewModel.Password"></span> *@
+@*         </div> *@
+@*         <div class="form-group"> *@
+@*             <input asp-for="RegisterViewModel.PasswordConfirm" placeholder="Подтвердите пароль"> *@
+@*             <span class="text-danger" asp-validation-for="RegisterViewModel.PasswordConfirm"></span> *@
+@*         </div> *@
+@*         <button type="submit">Зарегестрироваться</button> *@
+@*     </form> *@
+@* </div> *@
+@model ServiceDesk.Models.ViewModels.RegisterViewModel
+<div id="login-form-wrap">
+    <h2>Регистрация</h2>
+    <form id="login-form" asp-action="Register" method="post">
+        <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+        <p>
+            <input asp-for="FirstName" placeholder="Имя">
+            <span class="text-danger" asp-validation-for="FirstName"></span>
+        </p>
+        <p>
+            <input asp-for="LastName" placeholder="Фамилия">
+            <span class="text-danger" asp-validation-for="LastName"></span>
+        </p>
+        <p>
+            <input asp-for="Email" placeholder="Email">
+            <span class="text-danger" asp-validation-for="Email"></span>
+        </p>
+        <p>
+            <input asp-for="Password" placeholder="Пароль">
+            <span class="text-danger" asp-validation-for="Password"></span>
+        </p>
+        <p>
+            <input asp-for="PasswordConfirm" placeholder="Пароль">
+            <span class="text-danger" asp-validation-for="PasswordConfirm"></span>
+        </p>
+        <p>
+            <input type="submit" id="login" value="Регистрация">
+        </p>
+    </form>
+</div><!--login-form-wrap-->
