@@ -82,8 +82,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFza1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MyProjects/C\#/ServiceDesk/ServiceDesk/Views/User/_UsersList.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxfVXNlcnNMaXN0LmNzaHRtbA==
+[C:/MyProjects/C\#/ServiceDesk/ServiceDesk/Views/Task/TaskDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFza1xUYXNrRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/MyProjects/C\#/ServiceDesk/ServiceDesk/Views/Task/_tasksList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFza1xfdGFza3NMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/MyProjects/C\#/ServiceDesk/ServiceDesk/Views/User/_usersList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxfdXNlcnNMaXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/MyProjects/C\#/ServiceDesk/ServiceDesk/Views/_ViewImports.cshtml]

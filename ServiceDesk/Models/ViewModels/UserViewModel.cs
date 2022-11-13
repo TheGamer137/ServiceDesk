@@ -9,6 +9,6 @@ public class UserViewModel
     public string UserName { get; set; }
     public int SelectedRole { get; set; }
     public int UserRoleId { get; set; }
-    public int CurrentRoleId { get; set; }
+    public string CurrentRole { get; set; }
     public List<Role> UserRoles { get; set; }
 }

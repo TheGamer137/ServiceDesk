@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using ServiceDesk.Models;
 using ServiceDesk.Models.ViewModels;
 using Task = ServiceDesk.Models.Task;
 
@@ -10,7 +9,24 @@ public class TaskRepository : ITaskRepository
 {
     private readonly ApplicationDbContext _dbContext;
     public TaskRepository(ApplicationDbContext dbContext) => _dbContext = dbContext;
-    public ICollection<Models.Task> GetAllTasks() => _dbContext.Tasks.ToList();
+
+    public ICollection<TaskViewModel> GetAllTasks()
+    {
+        var tasks = _dbContext.Tasks.ToList();
+        List<TaskViewModel> model = new List<TaskViewModel>();
+        foreach (var task in tasks)
+        {
+            var taskModel = new TaskViewModel()
+            {
+                TaskId = task.Id,
+                TaskTitle = task.Title,
+                TaskDescription = task.Description
+            };
+            model.Add(taskModel);
+        }
+
+        return model;
+    }
     public Task GetTaskByTitle(string taskTitle)
     {
         throw new NotImplementedException();
@@ -49,36 +65,42 @@ public class TaskRepository : ITaskRepository
         return model;
     }
 
-    public async Task<Task> AddNewTask(TaskViewModel model)
+    public void AddNewTask(TaskViewModel model)
     {
-        var client = _dbContext.Users.FirstOrDefault(u => u.Id == model.ClientId);
-        Task task = new Task();
+        var client = _dbContext.Users.FirstOrDefault(u => u.FirstName + " " + u.LastName == model.Client.ClientName);
+        if (client == null)
         {
-            task.Title = model.TaskTitle;
-            task.Client.Id = client.Id;
-            task.Description = model.TaskDescription;
-            task.Status.StatusId = 1;
-            task.Deadline = model.Deadline;
+            Task task = new Task();
+            {
+                task.Title = model.TaskTitle;
+                task.Description = model.TaskDescription;
+                task.Status.StatusId = 1;
+                task.Deadline = model.Deadline;
+            }
+            _dbContext.Tasks.Add(task);
+            _dbContext.SaveChangesAsync();
         }
-        _dbContext.Tasks.Add(task);
-        await _dbContext.SaveChangesAsync();
-        return task;
     }
 
-    public async Task<Task> EditTask(TaskViewModel model)
+    public void TakeTask(TaskViewModel model)
     {
-        var executor = _dbContext.Users.FirstOrDefault(u => u.Id == model.ExecutorId);
+        throw new NotImplementedException();
+    }
+
+    public void ChangeTaskExecutor(TaskViewModel model)
+    {
         Task task = new Task();
         {
-            task.Id = model.TaskId;
-            task.Executor.ExecutorName = executor.FirstName + " " + executor.LastName;
-            task.Status.StatusId = model.StatusId;
-            task.Deadline = model.Deadline;
-            task.Comment = task.Comment;
+            task.Executor.Id = model.CurrentExecutor.Id;
+            task.Executor.ExecutorName = model.CurrentExecutor.ExecutorName;
         }
         _dbContext.Tasks.Update(task);
-        await _dbContext.SaveChangesAsync();
-        return task;
+        _dbContext.SaveChanges();
+    }
+
+    public void ChangeTaskDeadline(TaskViewModel model)
+    {
+        throw new NotImplementedException();
     }
 
     public bool CompleteTask(int id)

@@ -25,7 +25,7 @@ public class UserRepository:IUserRepository
                 Email = user.Email,
                 UserName = user.FirstName + " " + user.LastName,
                 UserRoles = _dbContext.Roles.Where(r => r.RoleName != "admin").ToList(),
-                CurrentRoleId = user.Role.Id
+                CurrentRole = user.Role.RoleName
             };
             model.Add(userModel);
         }

@@ -4,11 +4,13 @@ namespace ServiceDesk.Data.Repositories;
 
 public interface ITaskRepository
 {
-    ICollection<Models.Task> GetAllTasks();
+    ICollection<TaskViewModel> GetAllTasks();
     Models.Task GetTaskByTitle(string taskTitle);
     Models.Task GetTaskByDescription(string taskTitle);
     TaskFilterViewModel FilterTasks(string searchString);
-    Task<Models.Task> AddNewTask(TaskViewModel model);
-    Task<Models.Task> EditTask(TaskViewModel model);
+    void AddNewTask(TaskViewModel model);
+    void TakeTask(TaskViewModel model);
+    void ChangeTaskExecutor(TaskViewModel model);
+    void ChangeTaskDeadline(TaskViewModel model);
     bool CompleteTask(int id);
 }

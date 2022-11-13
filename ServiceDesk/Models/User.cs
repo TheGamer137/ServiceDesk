@@ -11,4 +11,5 @@ public class User : IdentityUser
     public string? LastName { get; set; }
     public int? RoleId { get; set; }
     public Role Role { get; set; }
+    // public bool IsAuthenticated { get; set; } = false;
 }

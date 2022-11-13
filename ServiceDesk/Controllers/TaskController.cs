@@ -20,24 +20,27 @@ public class TaskController : Controller
     [HttpGet]
     [Authorize(Roles = "Заказчик, Исполнитель")]
     public IActionResult Index() => View(_taskRepository.GetAllTasks());
+    [HttpGet]
+    [Authorize(Roles = "Заказчик, Исполнитель")]
+    public IActionResult TaskDetails() => View();
 
     [Authorize(Roles = "Заказчик")]
     public IActionResult Create() => View();
     
     [Authorize(Roles = "Заказчик")]
     [HttpPost]
-    public async Task<IActionResult> Create(TaskViewModel model)
+    public IActionResult Create(TaskViewModel model)
     {
         if (ModelState.IsValid)
         {
-            await _taskRepository.AddNewTask(model);
+            _taskRepository.AddNewTask(model);
             RedirectToAction("Index");
         }
         return View(model);
     }
     [HttpGet]
     [Authorize(Roles = "Заказчик, Исполнитель")]
-    public IActionResult Completed() => View(_taskRepository.GetAllTasks());
+    public IActionResult Completed() => View();
     // [Authorize(Roles = "Заказчик")]
     // [HttpPost]
     // public IActionResult ChangeDeadline()
