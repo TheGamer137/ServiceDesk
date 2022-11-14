@@ -19,17 +19,12 @@ public class UserController : Controller
     [HttpGet]
     public IActionResult Index() => View(_userRepository.GetAllUsers());
     
+    [HttpPost]
     public IActionResult ChangeUserRole(UserViewModel model)
     {
-        try
-        {
+        if (ModelState.IsValid)
             _userRepository.ChangeRole(model);
-            return RedirectToAction("Index", "User");
-        }
-        catch (Exception exception)
-        {
-            return NotFound(exception.Message);
-        }
+        return RedirectToAction("Index", "User");
     }
     
     [HttpDelete]

@@ -22,6 +22,10 @@ build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/MyProjects/C\#/ServiceDesk/ServiceDesk/Pages/Archive/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXJjaGl2ZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/MyProjects/C\#/ServiceDesk/ServiceDesk/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -54,28 +58,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFza1xBZGRDb21tZW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MyProjects/C\#/ServiceDesk/ServiceDesk/Views/Task/ChangeDeadline.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFza1xDaGFuZ2VEZWFkbGluZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/MyProjects/C\#/ServiceDesk/ServiceDesk/Views/Task/ChangeExecutor.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFza1xDaGFuZ2VFeGVjdXRvci5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/MyProjects/C\#/ServiceDesk/ServiceDesk/Views/Task/ChangeStatus.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFza1xDaGFuZ2VTdGF0dXMuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/MyProjects/C\#/ServiceDesk/ServiceDesk/Views/Task/Completed.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFza1xDb21wbGV0ZWQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/MyProjects/C\#/ServiceDesk/ServiceDesk/Views/Task/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFza1xDcmVhdGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/MyProjects/C\#/ServiceDesk/ServiceDesk/Views/Task/Filter.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFza1xGaWx0ZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/MyProjects/C\#/ServiceDesk/ServiceDesk/Views/Task/Index.cshtml]

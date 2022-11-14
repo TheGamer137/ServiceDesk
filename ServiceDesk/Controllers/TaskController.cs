@@ -16,70 +16,86 @@ public class TaskController : Controller
     {
         _taskRepository = taskRepository;
     }
+
+    
+    [Authorize(Roles = "Заказчик, Исполнитель")]
+    public IActionResult Index(int? page)=>View(_taskRepository.GetAllTasks(page));
     
     [HttpGet]
     [Authorize(Roles = "Заказчик, Исполнитель")]
-    public IActionResult Index() => View(_taskRepository.GetAllTasks());
+    public IActionResult Index(string currentFilter, string searchString, int? page)=>View( _taskRepository.SearchTasks(currentFilter, searchString, page));
+    
     [HttpGet]
     [Authorize(Roles = "Заказчик, Исполнитель")]
     public IActionResult TaskDetails() => View();
 
+    [HttpGet]
     [Authorize(Roles = "Заказчик")]
-    public IActionResult Create() => View();
+    public IActionResult Create(int clientId)
+    {
+        var model = _taskRepository.FindCurrentClient(clientId);
+        return View(model);
+    }
     
-    [Authorize(Roles = "Заказчик")]
     [HttpPost]
-    public IActionResult Create(TaskViewModel model)
+    [ValidateAntiForgeryToken]
+    [Authorize(Roles = "Заказчик")]
+    public IActionResult Create(CreateTaskViewModel model)
     {
         if (ModelState.IsValid)
         {
             _taskRepository.AddNewTask(model);
-            RedirectToAction("Index");
+            RedirectToAction("Index", "Task");
         }
         return View(model);
     }
+
     [HttpGet]
     [Authorize(Roles = "Заказчик, Исполнитель")]
-    public IActionResult Completed() => View();
-    // [Authorize(Roles = "Заказчик")]
-    // [HttpPost]
-    // public IActionResult ChangeDeadline()
-    // {
-    //     
-    //     return RedirectToAction("Index");
-    // }
-
-    // [Authorize(Roles = "Заказчик, Исполнитель")]
-    // [HttpPost]
-    // public IActionResult AddComment()
-    // {
-    //     return View();
-    // }
-
-    [Authorize(Roles = "Исполнитель")]
-    [HttpPost]
-    public IActionResult ChangeExecutor()
+    public IActionResult ArchiveTasks()=>RedirectToAction("Index", "Archive");
+    
+    [HttpPut]
+    [ValidateAntiForgeryToken]
+    [Authorize(Roles = "Заказчик")]
+    public IActionResult ChangeDeadline(DisplayTaskViewModel model)
     {
-        return View();
+        _taskRepository.ChangeTaskDeadline(model);
+        return RedirectToAction("Index");
     }
     
-    [Authorize(Roles = "Исполнитель")]
-    [HttpPost]
-    public IActionResult ChangeStatus()
+    [HttpPut]
+    [ValidateAntiForgeryToken]
+    [Authorize(Roles = "Заказчик, Исполнитель")]
+    public IActionResult AddComment(DisplayTaskViewModel model)
     {
-        return View();
+        _taskRepository.AddComment(model);
+        return RedirectToAction("Index");
+    }
+    
+    [HttpPut]
+    [ValidateAntiForgeryToken]
+    [Authorize(Roles = "Исполнитель")]
+    public IActionResult ChangeExecutor(DisplayTaskViewModel model)
+    {
+        _taskRepository.ChangeTaskExecutor(model);
+        return RedirectToAction("Index");
+    }
+    
+    [HttpPut]
+    [ValidateAntiForgeryToken]
+    [Authorize(Roles = "Исполнитель")]
+    public IActionResult ChangeStatus(DisplayTaskViewModel model)
+    {
+        _taskRepository.ChangeTaskDeadline(model);
+        return RedirectToAction("Index");
     }
 
-    public IActionResult Filter(string filter)
-    {
-        var model = _taskRepository.FilterTasks(filter);
-        return View(model);
-    }
+    [ValidateAntiForgeryToken]
     public IActionResult CompleteTask()
     {
         try
         {
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Task");
         }
         catch (Exception exception)
         {

@@ -41,6 +41,11 @@ public class AccountController : Controller
                 Role role = await _dbContext.Roles.FirstOrDefaultAsync(r => r.RoleName == "Заказчик");
                 if (role != null)
                     user.Role = role;
+                Client client = new Client
+                {
+                    ClientName = model.FirstName + " " + model.LastName
+                };
+                _dbContext.Clients.Add(client);
                 _dbContext.Users.Add(user);
                 await _dbContext.SaveChangesAsync();
  

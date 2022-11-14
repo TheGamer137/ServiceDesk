@@ -1,4 +1,4 @@
-﻿@model ICollection<TaskViewModel>
+﻿@model PagedList.IPagedList<DisplayTaskViewModel>
 @{
     ViewData["Title"] = "Home Page";
 }
@@ -13,7 +13,7 @@
             <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                 <ul class="navbar-nav flex-grow-1">
                     <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Task" asp-action="Completed">Архив заданий</a>
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Task" asp-action="ArchiveTasks">Архив заданий</a>
                     </li>
                 </ul>
                 </div>

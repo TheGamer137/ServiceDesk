@@ -9,9 +9,9 @@ public class Task
     public string Title { get; set; }
     public string Description { get; set; }
     public Client Client { get; set; }
-    public Executor Executor { get; set; }
+    public Executor? Executor { get; set; }
     public Status Status { get; set; }
     public DateTime Deadline { get; set; }
-    public string Comment { get; set; }
+    public string? Comment { get; set; }
 }
 

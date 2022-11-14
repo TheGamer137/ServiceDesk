@@ -1,16 +1,19 @@
-﻿using ServiceDesk.Models.ViewModels;
+﻿using PagedList;
+using ServiceDesk.Models;
+using ServiceDesk.Models.ViewModels;
+using Task = ServiceDesk.Models.Task;
 
 namespace ServiceDesk.Data.Repositories;
 
 public interface ITaskRepository
 {
-    ICollection<TaskViewModel> GetAllTasks();
-    Models.Task GetTaskByTitle(string taskTitle);
-    Models.Task GetTaskByDescription(string taskTitle);
-    TaskFilterViewModel FilterTasks(string searchString);
-    void AddNewTask(TaskViewModel model);
-    void TakeTask(TaskViewModel model);
-    void ChangeTaskExecutor(TaskViewModel model);
-    void ChangeTaskDeadline(TaskViewModel model);
+    IPagedList<DisplayTaskViewModel> GetAllTasks(int? page);
+    IPagedList<DisplayTaskViewModel> SearchTasks(string currentFilter, string searchString, int? page);
+    Task AddNewTask(CreateTaskViewModel model);
+    CreateTaskViewModel FindCurrentClient(int clientId);
+    void TakeTask(DisplayTaskViewModel model);
+    void AddComment(DisplayTaskViewModel model);
+    void ChangeTaskExecutor(DisplayTaskViewModel model);
+    void ChangeTaskDeadline(DisplayTaskViewModel model);
     bool CompleteTask(int id);
 }

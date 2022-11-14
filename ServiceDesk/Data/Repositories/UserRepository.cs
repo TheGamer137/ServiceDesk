@@ -14,8 +14,7 @@ public class UserRepository:IUserRepository
 
     public List<UserViewModel> GetAllUsers()
     {
-
-        var users = _dbContext.Users.Where(u=>u.Email!="admin@mail.ru");
+        var users = _dbContext.Users.Where(u=>u.Email!="admin@mail.ru").Include(u=>u.Role);
         List<UserViewModel> model = new List<UserViewModel>();
         foreach (var user in users)
         {
@@ -35,11 +34,31 @@ public class UserRepository:IUserRepository
 
     public void ChangeRole(UserViewModel model)
     {
-        _dbContext.Roles.ToList();
-        User user = _dbContext.Users.FirstOrDefault(u=>u.Email==model.Email);
+        // _dbContext.Roles.ToList();
+        User user = _dbContext.Users.FirstOrDefault(u=>u.Id==model.UserId);
         if(user!=null)
         {
             user.Role.Id = model.SelectedRole;
+            if (user.Role.RoleName == "Заказчик")
+            {
+                var client = new Client
+                {
+                    ClientName = user.FirstName + " " + user.LastName
+                };
+                var executor = _dbContext.Executors.Find(client);
+                _dbContext.Clients.Add(client);
+                _dbContext.Executors.Remove(executor);
+            }
+            if (user.Role.RoleName == "Исполнитель")
+            {
+                var executor = new Executor
+                {
+                    ExecutorName = user.FirstName + " " + user.LastName
+                };
+                var client = _dbContext.Clients.Find(executor);
+                _dbContext.Executors.Add(executor);
+                _dbContext.Clients.Remove(client);
+            }
         }
         _dbContext.Users.Entry(user).State = EntityState.Modified;
     }
